@@ -49,12 +49,12 @@ namespace UT_315 {
 
 	  //create new node and ptr
 	cdlist_node<Item> *node = NULL; //new pointer
-	NaN = new cdlist_node<Item>; //creates new node
+	node = new cdlist_node<Item>; //creates new node
 
 	//connecting new node to list
-	NaN -> set_data(obj); 
-	NaN -> set_next(target_ptr); 
-	NaN -> set_prev(target_ptr->get_prev());
+	node -> set_data(obj); 
+	node -> set_next(target_ptr); 
+	node -> set_prev(target_ptr->get_prev());
 
 	//connecting to the new node
 	target_ptr -> get_prev() -> set_next(node); 
@@ -100,7 +100,7 @@ namespace UT_315 {
   void list_clear(cdlist_node<Item>* head_ptr){
 
    // ADD YOUR CODE HERE!
-	  if (head_ptr->get_next() = head_ptr) //if next is header, dont clear
+	  if (head_ptr->get_next() == head_ptr) //if next is header, dont clear
 		  return;
 	  else {
 		  while (head_ptr->get_next() != head_ptr) { 
