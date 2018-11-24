@@ -78,8 +78,8 @@ namespace UT_315 {
 	cdlist_node<Item> *node = new cdlist_node<Item>;
 
 	//set next/prev
-	temp -> set_next(node);
-	temp -> set_prev(node);
+	node -> set_next(node);
+	node -> set_prev(node);
 
 	list_copy(L.head, node);
 	head = node;
@@ -222,10 +222,10 @@ namespace UT_315 {
    * Returns the number of elements currently stored in the list.
    * Return: number of elements in the list.
    */
-  template <typename Item>
-  List<Item>::size_type List<Item>::size() const{
+ template <typename Item>
+  List<Item>::size_type List<Item>::size() const {
     // ADD YOUR CODE HERE!
-	return list_length(head);	
+	  return list_length(head);
   }
   
   //////////////////////////////////////////////////////////////////////////
