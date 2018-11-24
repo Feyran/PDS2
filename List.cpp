@@ -223,7 +223,7 @@ namespace UT_315 {
    * Return: number of elements in the list.
    */
  template <typename Item>
-  List<Item>::size_type List<Item>::size() const {
+ typename List<Item>::size_type List<Item>::size() const {
     // ADD YOUR CODE HERE!
 	  return list_length(head);
   }
