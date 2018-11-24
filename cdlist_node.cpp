@@ -120,7 +120,7 @@ namespace UT_315 {
   std::size_t list_length(cdlist_node<Item> *head_ptr){
      
     // ADD YOUR CODE HERE!
-	int count = 0;
+	size_t count = 0;
 
 	cdlist_node<Item> *curr = NULL; size_t count = 0;
 	curr = head_ptr->get_next(); //set to start after header
