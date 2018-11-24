@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 namespace UT_315 {
 
   class Date {
