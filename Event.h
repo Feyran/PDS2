@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Date.h"
 
+using namespace std;
+
 namespace UT_315{
   class Event {
   public:
