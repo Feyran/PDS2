@@ -175,9 +175,11 @@ namespace UT_315 {
 	  cdlist_node<Item> *node = list_search(head, obj);
 
 	  if (node != NULL) {
-		  return List_Iterator<Item>(node -> get_prev(), node -> get_prev(), true);
+		  cout << "list cpp found!" << endl;
+		  return List_Iterator<Item>(node, node, true);
 	  }
 	  else {
+		  cout << "list cpp found failure!" << endl;
 		  return List_Iterator<Item>(NULL, NULL, false);
 	  }
 
