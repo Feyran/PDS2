@@ -180,7 +180,7 @@ namespace UT_315 {
 	  }
 	  else {
 		  cout << "list cpp found failure!" << endl;
-		  return List_Iterator<Item>(NULL, NULL, false);
+		  return List_Iterator<Item>(node, node, false);
 	  }
 
   }
