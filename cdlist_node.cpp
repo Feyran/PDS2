@@ -122,7 +122,7 @@ namespace UT_315 {
     // ADD YOUR CODE HERE!
 	size_t count = 0;
 
-	cdlist_node<Item> *curr = NULL; size_t count = 0;
+	cdlist_node<Item> *curr = NULL; 
 	curr = head_ptr->get_next(); //set to start after header
 
 	for (; curr != head_ptr; curr = curr->get_next()) {//cycle thru nodes
