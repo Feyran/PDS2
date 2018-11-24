@@ -176,6 +176,7 @@ namespace UT_315 {
 			return node;
 		}
 	}
+	cout << "data fuckd up bro" << endl;
     return NULL; //data was never found
   }
 
