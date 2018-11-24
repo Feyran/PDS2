@@ -172,7 +172,8 @@ namespace UT_315 {
 	cdlist_node<Item> *node = NULL; //new node
 	for (node = head_ptr -> get_next(); node != head_ptr; node = node -> get_next()){  //loop until temp = header
 		if (node -> get_data() == obj){ //data found
-			  return node;
+			cout << "Data found!" << endl;
+			return node;
 		}
 	}
     return NULL; //data was never found
