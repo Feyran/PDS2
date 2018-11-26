@@ -45,7 +45,7 @@ namespace UT_315 {
   template <typename Item>
   void list_insert(cdlist_node<Item>* target_ptr, const Item& obj){
 
-    // ADD YOUR CODE HERE!
+    // ADD YOUR CODE HERE!dawodhahda;p
 	  cout << "checkmark list_insert" << endl;
 	  //create new node and ptr
 	cdlist_node<Item> *node = NULL; //new pointer
@@ -59,6 +59,8 @@ namespace UT_315 {
 	//connecting to the new node
 	target_ptr -> get_prev() -> set_next(node); 
 	target_ptr -> set_prev(node);
+	cout << "change" << endl;
+	cout << "pqod qklndklawn" << endl;
   }
 
   /*
