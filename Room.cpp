@@ -67,7 +67,7 @@ namespace UT_315{
 	       E.get_capacity());
     
     // ADD YOUR CODE HERE!
-	E = new_event;
+	E = new_event;	
 	List_Iterator<Event> temp = room_events.find(E);
 
 	if (!temp.has_data()) {//verify if temp already had data at specified node

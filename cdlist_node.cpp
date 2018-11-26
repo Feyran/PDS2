@@ -46,7 +46,7 @@ namespace UT_315 {
   void list_insert(cdlist_node<Item>* target_ptr, const Item& obj){
 
     // ADD YOUR CODE HERE!
-
+	  cout << "checkmark list_insert" << endl;
 	  //create new node and ptr
 	cdlist_node<Item> *node = NULL; //new pointer
 	node = new cdlist_node<Item>; //creates new node
@@ -151,7 +151,7 @@ namespace UT_315 {
 			return node;
 		}
 	}
-	return NULL; //data was never found
+	return NULL; //data rever found
   }
   
   /*
@@ -170,6 +170,7 @@ namespace UT_315 {
 
     // ADD YOUR CODE HERE!
 	cdlist_node<Item> *node = NULL; //new node
+	cout << "reaced list_search in cdlist_node cpp" << endl;
 	for (node = head_ptr -> get_next(); node != head_ptr; node = node -> get_next()){  //loop until temp = header
 		if (node -> get_data() == obj){ //data found
 			return node;
@@ -193,7 +194,7 @@ namespace UT_315 {
 				 const Item& obj){
 
     // ADD YOUR CODE HERE!
-	cdlist_node<Item> *node = NULL; //new node
+	cdlist_node<Item> *node = new cdlist_node<Item>; //new node
 
 	for (node = head_ptr->get_next(); node != head_ptr; node = node->get_next()){ //loop thru nodes
 		if (node -> get_data() > obj) { 

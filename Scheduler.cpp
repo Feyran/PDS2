@@ -50,7 +50,7 @@ namespace UT_315 {
   Scheduler::Scheduler(){
 
     // ADD YOUR CODE HERE
-	room_list = List<Room>(); //basic constructir
+	room_list = List<Room>(); //basic constructor
   }
 
   /*
@@ -70,18 +70,22 @@ namespace UT_315 {
 
     // ADD YOUR CODE HERE
 	List_Iterator<Room> TBAdded = room_list.find(the_event.get_room()); //temp value holding the event to be added
-
+	cout << "Add event accesed" << endl;
 	if (TBAdded.has_data()){
-		for (int i = 0; TBAdded.has_data(); TBAdded.next()){ //loop to verify through nodes
+		for (; TBAdded.has_data(); TBAdded.next()){ //loop to verify through nodes
 			if (TBAdded.get_data().get_capacity() >= the_event.get_capacity()){ //verifying if capacity does not return any issues
-					return (TBAdded.get_data().add_event(the_event));
+				if (TBAdded.get_data().add_event(the_event)) {
+					return true;
+				}
 			}
 		}
 	}
 	else {
 		for (TBAdded = room_list.first(); TBAdded.has_data(); TBAdded.next()){ //loop to verify through nodes
 			if (TBAdded.get_data().get_capacity() >= the_event.get_capacity()){ //verifying room capacity
-				return (TBAdded.get_data().add_event(the_event));
+				if (TBAdded.get_data().add_event(the_event)) {
+					return true;
+				}
 			}
 		}
 	}
@@ -200,7 +204,6 @@ namespace UT_315 {
 	List_Iterator<Room> room = room_list.first();
 
 	for (; room.has_data(); room.next()){ //loop thru rooms
-	//Room &tempR = room.get_data(); //pointer tipo Room que va a apuntar a la data de room
 		List_Iterator<Event> event = room.get_data().first_event();
 		for ( ;event.has_data(); event.next()){ //loop thru events
 			Event &tempDate = event.get_data();
@@ -221,7 +224,6 @@ namespace UT_315 {
    * Returns: a new list with all the events that happen on a given room.
    */
 
-  //VERIFYYYYYYYYYYY
   List<Event> Scheduler::find_events_room(const string& room_number) const {
 
      
@@ -229,7 +231,6 @@ namespace UT_315 {
 	List_Iterator<Room> room = room_list.find(room_number);
 	if (room.has_data()){
 		  List<Event> LoE = List<Event>(); //construct object to be returned
-		  //Room &temp = room.get_data();
 		  List_Iterator<Event> event = room.get_data().first_event();
 		  for (; event.has_data(); event.next()){ //loop verifies thru all nodes
 			  LoE.insert(event.get_data()); //copy events into new object
@@ -250,7 +251,7 @@ namespace UT_315 {
    * Returns: a new list with all the events that happen on a given period.
    */
 
-  //VERIFYYYYYYYYYYYYYYYYYY
+
    List<Event> Scheduler::find_events_byperiod(const Date& start_date,
 					       const Date& end_date){
 
@@ -259,7 +260,6 @@ namespace UT_315 {
 	List_Iterator<Room> room = room_list.first(); //room iterator
 
 	for (; room.has_data(); room.next()) {//loop for rooms
-		//Room &temp1 = room.get_data(); //temp ptr with room data
 		List_Iterator<Event> event = room.get_data().first_event();
 		for (; event.has_data(); event.next()) { //loop for events within room
 			Event &temp = event.get_data();
@@ -310,7 +310,7 @@ namespace UT_315 {
      // ADD YOUR CODE HERE
 	List_Iterator<Room> temp = room_list.find(the_room); //storing temp value
 
-	if (!temp.has_data()){ //tiene la data?
+	if (!temp.has_data()){ 
 		room_list.insert(the_room); //space for room found!
 		cout << "Room succesfully inserted!" << endl;
 		return true;

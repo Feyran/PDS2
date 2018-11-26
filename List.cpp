@@ -75,7 +75,7 @@ namespace UT_315 {
   List<Item>::List(const List<Item>& L){
     // ADD YOUR CODE HERE!
 	  //new node
-	cdlist_node<Item> *node = new cdlist_node<Item>;
+	  cdlist_node<Item> *node = new NULL;
 
 	//set next/prev
 	node -> set_next(node);
@@ -173,8 +173,8 @@ namespace UT_315 {
 
     // ADD YOUR CODE HERE!
 	  cdlist_node<Item> *node = list_search(head, obj);
-
-	  if (node != NULL) {
+	  cout << "Checkmark" << endl;
+	  if (node != NULL) {	
 		  return List_Iterator<Item>(node, node, true);
 	  }
 	  else {
@@ -193,7 +193,11 @@ namespace UT_315 {
   void List<Item>::insert(const Item& obj) {
     
     // ADD YOUR CODE HERE!
-	list_insert(head, obj); //al head le asigna la data que el usuario ingreso como objeto 
+	  cout << "checkmark" << endl;
+	  cdlist_node<Item> *temp = NULL;
+	  temp = list_locate(head, obj);
+	  list_insert(temp, obj);  
+	
 	return;
   }
 
